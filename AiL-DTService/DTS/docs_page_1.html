@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="DTS(DaTa Service)由艾尔AiL-NE项目组负责维护。">
+	<meta name="keywords" content="DTS,DaTa Service,艾尔AiL,AiL-NE">
+	<meta name="author" content="AiL-NE">
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	<link rel="shortcut icon" href="./img/favicon_64x.png">
+	<title>BitC开源软件镜像站_官方文档 | Bitable Developer Documentation</title>
+</head>
+
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+
+	<div style="width:device-width; overflow:auto; border:1px solid #000000;">
+		<div class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="./index.html"><span class="thuhidden"><img
+								src="./img/Atomic_title.png" alt="" width="48px"> Bitable</span> Documentation</a>
+				</div><br />
+				<div class="navbar-collapse collapse navbar-right">
+					<ul class="nav navbar-nav">
+						<li><a href="./index.html">Home</a></li>
+						<li><a href="./docs_page_1.html">Docs</a></li>
+						<li><a href="./">Console</a></li>
+						<li><a href="./2048.html" target="_blank">Mini-Games</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="mirrors">
+			<div class="spacing hidden-xs"></div>
+			<div class="container">
+				<div class="row">
+					<div id="mirror-list" class="col-md-8 table-responsive">
+						<div class="row">
+							<h3><strong>配置Manjaro软件源</strong></h3>
+						</div>
+						<table class="table">
+							<tbody>
+								<p>1.配置镜像源: </p>
+								<pre><code>sudo pacman-mirrors -i -c China -m rank</code></pre>
+								<p>2.设置archlinuxcn源: </p>
+								<pre><code>sudo nano /etc/pacman.conf
+									
+[archlinuxcn]
+SigLevel = Optional TrustAll
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
+</code></pre>
+								<p>3.更新源列表</p>
+								<pre><code>sudo pacman-mirrors -g</code></pre>
+								<p>4.更新pacman数据库并更新系统</p>
+								<pre><code>sudo pacman -Syyu</code></pre>
+								<p>5.安装PGP签名</p>
+								<pre><code>sudo pacman -S archlinuxcn-keyring</code></pre>
+							</tbody>
+							<div class="row">
+								<h3><strong>安装中文输入法</strong></h3>
+							</div>
+							<tbody>
+								<p>1.安装输入法</p>
+								<pre><code>sudo pacman -S fcitx-im
+sudo pacman -S fcitx-configtool
+sudo pacman -S fcitx-sogoupinyin
+</code></pre>
+								<p>2.配置输入法</p>
+								<pre><code>sudo pacman nano ~/.xprofile
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+</code></pre>
+								<p>3.重启系统即可生效</p>
+								<pre><code>reboot</code></pre>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="col-md-4">
+						<div class="spacing hidden-xs"></div>
+						<div id="wizard">
+						</div>
+						<div id="news">
+							<h4><strong>文档目录</strong></h4>
+							<ul>
+								<li><strong><a href="docs_page_1.html">Manjaro设置软件源及安装输入法</a></strong></li>
+							</ul>
+						</div>
+
+						<div id="download-link">
+							<h4><strong>下载链接</strong></h4>
+							<ul>
+								<li><a href="./sources/Manjaro_User_Guide.pdf">Manjaro用户手册</a></li>
+							</ul>
+						</div>
+
+						<div class="thuhidden">
+							<h4><strong>联系我们</strong></h4>
+							<ul>
+								<li><strong>意见反馈</strong> <br> <a
+										href="https://github.com/AiL-NE/issues">https://github.com/AiL-NE/issues</a>
+								</li>
+								<li><strong>发送邮件</strong> <br> <a id="eib1gieB"
+										href="mailto:fpscience@qq.com">fpscience@qq.com</a></li>
+								<li><strong>QQ在线技术支持</strong> <br> <a id="eib1gieB">2841132812</a></li>
+							</ul>
+						</div>
+						<div>
+							<h4><strong>社区支持</strong></h4>
+							<ul>
+								<li><strong>扫描二维码加入Atomic技术讨论群</strong> <br> <img class="img-responsive thuhidden"
+										style="margin-top:5%" width="100" src="./img/team_QR%20.png"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="footerwrap" class="tuna-foot-1" style="background-color: #245269">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4">
+						<p class="thuhidden">
+							<img src="img/Atomic_white.png" style="width: 30%;">
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/reset.min.css">
+	<link rel="stylesheet" href="css/btt.css">
+	<link rel="shortcut icon" href="./img/favicon_64x.png">
+	<script type="text/javascript">
+		document.onkeydown = function () {
+			if (window.event && window.event.keyCode == 122) { //禁用F11
+				event.keyCode = 0;
+				event.returnValue = false;
+				alert("已禁用全屏!")
+				return false;
+			} else if (window.event && window.event.keyCode == 121) { //禁用F10
+				event.keyCode = 0;
+				event.returnValue = false;
+				alert("已禁用")
+				return false;
+			};
+			///////////////
+			window.onload = function () {
+				var audio = document.getElementById('music');
+				audio.pause(); //打开页面时无音乐
+			}
+
+			function play() {
+				var audio = document.getElementById('music');
+				if (audio.paused) {
+					audio.play();
+				} else {
+					audio.pause(); //暂停
+					audio.currentTime = 0; //音乐从头播放
+				}
+			}
+	</script>
+	<title>Mini-Game 2048</title>
+</head>
+
+<body id="background" onload="showDT()" oncontextmenu=self.event.returnValue=false onselectstart="return false">
+	<div class="container">
+		<div class="directions">
+			<p><strong>说明: </strong>使用箭头控制方块移动 , 当两个相同的方块一起移动时就会合并成一个</p>
+		</div>
+		<div class="scores">
+			<div class="score-container best-score">
+				最高分数:
+				<div class="score">
+					<div id="bestScore">0</div>
+				</div>
+			</div>
+			<div class="score-container">
+				分数:
+				<div class="score">
+					<div id="score">0</div>
+					<div class="add" id="add"></div>
+				</div>
+			</div>
+		</div>
+		<div class="game">
+			<div id="tile-container" class="tile-container"></div>
+			<div class="end" id="end">游戏结束<div class="monkey"></div><button
+					class="btn not-recommended__item js-restart-btn" id="try-again">重试</button></div>
+		</div>
+		<div class="not-recommended">
+			<button class="btn not-recommended__item js-restart-btn" id="restart">重 置</button>
+		</div>
+	</div>
+	<script src="js/2048.js"></script>
+</body>
+
+</html>
